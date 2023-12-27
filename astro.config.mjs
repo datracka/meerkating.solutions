@@ -5,6 +5,7 @@ import compress from "astro-compress";
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), compress(),],
+  output: 'server',
   i18n: {
     defaultLocale: "en",
     locales: ["en", "es"],
