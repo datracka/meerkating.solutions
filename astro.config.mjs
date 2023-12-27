@@ -2,9 +2,11 @@ import { defineConfig } from 'astro/config';
 import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 
+import vercel from "@astrojs/vercel/serverless";
+
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), compress(),],
+  integrations: [tailwind(), compress()],
   output: 'server',
   i18n: {
     defaultLocale: "en",
@@ -12,5 +14,6 @@ export default defineConfig({
     routing: {
       prefixDefaultLocale: true
     }
-  }
+  },
+  adapter: vercel()
 });
